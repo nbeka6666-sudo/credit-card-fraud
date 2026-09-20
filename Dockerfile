@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements-docker.txt .
-RUN pip install --default-timeout=1000 --no-cache-dir -r requirements-docker.txt
+RUN pip install --no-cache-dir -r requirements-docker.txt && \
+    pip install --no-cache-dir --no-deps xgboost==2.1.4
 
 COPY api/ ./api/
 COPY models/ ./models/
