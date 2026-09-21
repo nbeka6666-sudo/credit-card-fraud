@@ -129,6 +129,21 @@ Source: [https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud](https://www.ka
 **Winner:** `scale_pos_weight` outperformed SMOTE on all metrics — it avoids synthetic examples and gives a cleaner model.
 
 **Why PR-AUC matters:** F1 depends on a specific threshold. PR-AUC evaluates the model across all thresholds — this is the recommended metric for imbalanced fraud detection, where the operating threshold may shift.
+### Confusion Matrix (Test Set)
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+### ROC Curve
+
+![ROC Curve](images/roc_curve.png)
+
+### Precision-Recall Curve
+
+![PR Curve](images/pr_curve.png)
+
+### Feature Importance (XGBoost)
+
+![Feature Importance](images/feature_importance.png)
 
 ---
 
@@ -218,11 +233,5 @@ Saves model artifacts to `models/`.
 | Dashboard | Streamlit |
 | Deployment | Docker |
 
----
 
-## Next Steps
 
-- **Threshold tuning for Recall ≥ 0.85** — trade-off control for fraud teams
-- **Hyperparameter optimization** via Optuna
-- **Model monitoring** — track drift in production
-- **Cloud deployment** — AWS / GCP with auto-scaling
